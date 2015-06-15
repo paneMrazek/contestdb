@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+	<div class="header-container">
+		<header class="width">
+			<!--<div class="login">
+				<form class="form-signin" method="POST" action="/user">
+					<h2 class="form-signin-heading">Please sign in</h2>
+					<input class="form-control" type="text" required name="username" placeholder="Username">
+					<input class="form-control" type="password" required name="password" placeholder="Password">
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+				</form>
+			</div>-->
+		</header>
+	</div>
+	<div class="nav-container">
+		<nav class="width">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="NewUser">Users</a></li>
+				<li><a href="Writings">Submit Writings</a></li>
+				<li><a href="listwritings">View Writings</a></li>
+				<li><a href="newcontest">Join Contest</a></li>
+				<li><a href="contests">View Contests</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="main-container">
+		<div class="main width">
+			<h1>Welcome to the site!</h1>
+			<p>You can do these things!</p>
+			<ul>
+				<li><a href="Writings">Sumit new work</a></li>
+				<li>Search for something to read: 
+					<form class="form-search" method="POST" action="">
+						<input class="form-control" type="text" required name="search" placeholder="Search">
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+					</form>
+				</li>
+				<li>Search of Authors:
+					<form class="form-search-author" method="POST" action="">
+						<input class="form-control" type="text" required name="search" placeholder="Authors Name">
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+					</form></li>
+				<li><a href="ListingByGenre.ejs">Listing by Genre</a></li>
+				<li><a href="FullListing.ejs">Simply Browse</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-container">
+		<footer class="width">
+			&copy; 2015 Evan & Alex.  All Rights Reserved.
+		</footer>
+	</div>
+  </body>
+</html>

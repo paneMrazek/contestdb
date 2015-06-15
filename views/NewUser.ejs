@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+	<div class="header-container">
+		<header class="width">
+
+		</header>
+	</div>
+	<div class="nav-container">
+		<nav class="width">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="NewUser">Users</a></li>
+				<li><a href="Writings">Submit Writings</a></li>
+				<li><a href="listwritings">View Writings</a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="main-container">
+		<div class="main width">
+			<div class="col2">
+				<h1>Submit New User</h1>
+				<form class="form-newUser" method="POST" action="/user" onsubmit="return validateForm()">
+					<input class="form-control" type="text" required name="userName" placeholder="Username">
+					<input class="form-control" type="text" required name="email" placeholder="Email">
+					<input class="form-control" type="text" required name="firstName" placeholder="First Name">
+					<input class="form-control" type="text" required name="lastName" placeholder="Last Name">
+					<input class="form-control" type="password" required name="password" placeholder="Password">
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Add User</button>
+				</form>
+			</div>
+			<div class="col2">
+				<h1>User List</h1>
+				<div class="userList">
+					<ul>
+						<li class="title">Username</li>
+						<li class="title">First Name</li>
+						<li class="title">Last Name</li>
+						<li class="title">Email</li>
+					</ul>
+				</div>
+				<script>
+					$.get( "getusers", function( data ) {
+						var obj = $.parseJSON(data);
+						for(var i in obj)
+						{
+							var userName = obj[i].userName;
+							var email = obj[i].email;
+							var firstName = obj[i].firstName;
+							var lastName = obj[i].lastName;
+							
+							$('.userList ul').append('<li>'+userName+'</li>');
+							$('.userList ul').append('<li>'+firstName+'</li>');
+							$('.userList ul').append('<li>'+lastName+'</li>');
+							$('.userList ul').append('<li>'+email+'</li>');
+						}
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+	<div class="footer-container">
+		<footer class="width">
+			&copy; 2015 Evan & Alex.  All Rights Reserved.
+		</footer>
+	</div>
+  </body>
+</html>
